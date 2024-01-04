@@ -58,6 +58,12 @@ p {
   /* padding: 0; */
 }
 
+img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
 .dark {
   color: black;
 }
@@ -65,7 +71,7 @@ p {
 .container-outer {
   width: 35%;
   padding: 10px;
-  margin: 40% auto 10px;
+  margin: 20% auto 10px;
   background-color: #8c9aa9;
   border-radius: 5px;
 }

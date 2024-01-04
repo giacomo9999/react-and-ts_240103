@@ -1,9 +1,6 @@
-import { type ReactNode } from "react";
+import { type PropsWithChildren } from "react";
 
-interface BookProps {
-  title: string;
-  children: ReactNode;
-}
+type BookProps = PropsWithChildren<{ title: string }>;
 
 export default function Book({ title, children }: BookProps) {
   return (
