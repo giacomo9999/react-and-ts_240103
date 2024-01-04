@@ -1,9 +1,12 @@
-function App() {
+import Book from "./components/Book.tsx";
+
+export default function App() {
   return (
     <div className="container-outer">
-      <h1>I AM THE APP</h1>
+      <h1>Books Of Jim</h1>
+      <Book title="The Dying Earth">
+        <p>Blah blah blah</p>
+      </Book>
     </div>
   );
 }
-
-export default App;
