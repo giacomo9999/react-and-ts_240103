@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import Book from "./components/Book";
+import BookList from "./components/BookList";
 import Header from "./components/Header";
 import goalsImg from "./assets/goals.jpg";
 
@@ -29,17 +29,7 @@ export default function App() {
       <Header image={{ src: goalsImg, alt: "picture of some books" }}>
         <h1>Books To Read</h1>
       </Header>
-      <ul>
-        {books.map((book) => {
-          return (
-            <li key={book.id}>
-              <Book title={book.title} author={book.author} id={book.id}>
-                <p>I Am A Book!</p>
-              </Book>
-            </li>
-          );
-        })}
-      </ul>
+      <BookList bookData={books} />
       <button onClick={handleAddBook}>Add Book</button>
     </main>
   );
