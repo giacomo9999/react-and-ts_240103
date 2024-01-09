@@ -1,19 +1,11 @@
-import { type PropsWithChildren } from "react";
-
-type BookProps = PropsWithChildren<{
-  title: string;
-  description: string;
-  id: number;
-}>;
-
-export default function Book({ title, description }: BookProps) {
+export default function Book() {
   return (
-    <>
+    <article>
       <div className="container-inner">
-        <h2>{title}</h2>
-        <h3>{description}</h3>
-        <button>Delete</button>
+        <h2>TITLE</h2>
+        <p>DESCRIPTION</p>
       </div>
-    </>
+      <button>DELETE</button>
+    </article>
   );
 }
