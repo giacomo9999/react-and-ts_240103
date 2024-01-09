@@ -1,11 +1,17 @@
-export default function Book() {
+export default function Book({
+  title,
+  author,
+}: {
+  title: string;
+  author: string;
+}) {
   return (
     <article>
       <div className="container-inner">
-        <h2>TITLE</h2>
-        <p>DESCRIPTION</p>
+        <h2>{title}</h2>
+        <p>{author}</p>
       </div>
-      <button>DELETE</button>
+      <button>DELETE</button> 
     </article>
   );
 }
