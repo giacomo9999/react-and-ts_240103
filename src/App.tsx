@@ -32,8 +32,10 @@ export default function App() {
       <ul>
         {books.map((book) => {
           return (
-            <li>
-              <Book title={book.title} author={book.author} id={book.id} />
+            <li key={book.id}>
+              <Book title={book.title} author={book.author} id={book.id}>
+                <p>I Am A Book!</p>
+              </Book>
             </li>
           );
         })}
