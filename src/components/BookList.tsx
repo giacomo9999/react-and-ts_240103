@@ -1,7 +1,8 @@
 import Book from "./Book";
+import { BookProps } from "../App";
 
 type BookListProps = {
-  bookData: { title: string; author: string; id: number }[];
+  bookData: BookProps[];
 };
 
 export default function BookList(bookListData: BookListProps) {

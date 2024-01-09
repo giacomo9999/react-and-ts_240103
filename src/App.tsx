@@ -4,7 +4,7 @@ import BookList from "./components/BookList";
 import Header from "./components/Header";
 import goalsImg from "./assets/goals.jpg";
 
-type BookProps = {
+export type BookProps = {
   title: string;
   author: string;
   id: number;
