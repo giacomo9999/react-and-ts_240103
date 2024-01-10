@@ -37,7 +37,7 @@ export default function App() {
       <Header image={{ src: goalsImg, alt: "picture of some books" }}>
         <h1>Books To Read</h1>
       </Header>
-      <BookList bookInfo={books} onDelete={handleDeleteBook} />
+      <BookList bookInfo={books} onDeleteBook={handleDeleteBook} />
       <button onClick={handleAddBook}>Add Book</button>
     </main>
   );
