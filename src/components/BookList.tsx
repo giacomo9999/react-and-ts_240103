@@ -2,13 +2,14 @@ import Book from "./Book";
 import { BookProps } from "../App";
 
 type BookListProps = {
-  bookData: BookProps[];
+  bookInfo: BookProps[];
+  onDelete: (id: number) => void;
 };
 
-export default function BookList(bookListData: BookListProps) {
+export default function BookList({bookInfo, onDelete}: BookListProps) {
   return (
     <ul>
-      {bookListData.bookData.map((book) => {
+      {bookInfo.map((book) => {
         return (
           <li key={book.id}>
             <Book title={book.title} author={book.author} id={book.id}>

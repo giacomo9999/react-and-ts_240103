@@ -24,12 +24,20 @@ export default function App() {
     });
   }
 
+  function handleDeleteBook(id: number) {
+    setBooks((prevBooks) =>
+      prevBooks.filter((book) => {
+        return book.id !== id;
+      })
+    );
+  }
+
   return (
     <main className="container-outer">
       <Header image={{ src: goalsImg, alt: "picture of some books" }}>
         <h1>Books To Read</h1>
       </Header>
-      <BookList bookData={books} />
+      <BookList bookInfo={books} onDelete={handleDeleteBook} />
       <button onClick={handleAddBook}>Add Book</button>
     </main>
   );
