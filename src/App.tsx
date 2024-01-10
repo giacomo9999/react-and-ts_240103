@@ -3,6 +3,7 @@ import { useState } from "react";
 import BookList from "./components/BookList";
 import Header from "./components/Header";
 import goalsImg from "./assets/goals.jpg";
+import NewBook from "./components/NewBook";
 
 export type BookProps = {
   title: string;
@@ -22,6 +23,7 @@ export default function App() {
       };
       return [...prevBooks, newBook];
     });
+    console.log("App.tsx adding book...");
   }
 
   function handleDeleteBook(id: number) {
@@ -37,8 +39,9 @@ export default function App() {
       <Header image={{ src: goalsImg, alt: "picture of some books" }}>
         <h1>Books To Read</h1>
       </Header>
+      <NewBook addBook={handleAddBook} />
       <BookList bookInfo={books} onDeleteBook={handleDeleteBook} />
-      <button onClick={handleAddBook}>Add Book</button>
+      {/* <button onClick={handleAddBook}>Add Book</button> */}
     </main>
   );
 }
