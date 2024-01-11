@@ -13,6 +13,7 @@ export type BookProps = {
 
 export default function App() {
   const [books, setBooks] = useState<BookProps[]>([]);
+  
 
   function handleAddBook() {
     setBooks((prevBooks) => {

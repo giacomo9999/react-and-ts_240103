@@ -10,18 +10,22 @@ export default function NewBook({ addBook }: NewBookProps) {
     console.log("NewBook.tsx handling submit...");
   }
   return (
-    <form>
-      <p>
-        <label htmlFor="book">New Book</label>
-        <input id="book" type="text" />
-      </p>
-      <p>
-        <label htmlFor="author">Author</label>
-        <input id="author" type="text" />
-      </p>
-      <p>
-        <button onClick={handleSubmit}>Add Book</button>
-      </p>
-    </form>
+    <div className="container-inner">
+      <form className="h-form">
+        <label className="h-label" htmlFor="book">
+          New Book
+        </label>
+        <input className="h-input" id="book" type="text" />
+        <br />
+        <label className="h-label" htmlFor="author">
+          Author
+        </label>
+        <input className="h-input" id="author" type="text" />
+        <br />
+        <button className="h-btn" onClick={handleSubmit}>
+          Add Book
+        </button>
+      </form>
+    </div>
   );
 }
