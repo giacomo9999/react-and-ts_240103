@@ -13,7 +13,7 @@ export type BookProps = {
 
 export default function App() {
   const [books, setBooks] = useState<BookProps[]>([]);
-  
+  const [addNewPanelOpen, toggleAddNewPanelOpen] = useState<boolean>(false);
 
   function handleAddBook() {
     setBooks((prevBooks) => {
@@ -40,9 +40,16 @@ export default function App() {
       <Header image={{ src: goalsImg, alt: "picture of some books" }}>
         <h1>Books To Read</h1>
       </Header>
-      <NewBook addBook={handleAddBook} />
+      <button onClick={() => toggleAddNewPanelOpen(!addNewPanelOpen)}>
+        Add Book
+      </button>
+      {addNewPanelOpen ? (
+        <NewBook addBook={handleAddBook} togglePanel={toggleAddNewPanelOpen} />
+      ) : (
+        <br />
+      )}
+
       <BookList bookInfo={books} onDeleteBook={handleDeleteBook} />
-      {/* <button onClick={handleAddBook}>Add Book</button> */}
     </main>
   );
 }

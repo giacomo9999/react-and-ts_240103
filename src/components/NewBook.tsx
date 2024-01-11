@@ -2,11 +2,13 @@ import { FormEvent } from "react";
 
 type NewBookProps = {
   addBook: (id: number) => void;
+  togglePanel: (panelState: boolean) => void;
 };
-export default function NewBook({ addBook }: NewBookProps) {
+export default function NewBook({ addBook, togglePanel }: NewBookProps) {
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
     addBook(-999);
+    togglePanel(false);
     console.log("NewBook.tsx handling submit...");
   }
   return (
@@ -21,9 +23,8 @@ export default function NewBook({ addBook }: NewBookProps) {
           Author
         </label>
         <input className="h-input" id="author" type="text" />
-        <br />
         <button className="h-btn" onClick={handleSubmit}>
-          Add Book
+          Submit
         </button>
       </form>
     </div>
